@@ -106,7 +106,7 @@ const cv = {
     phone: "0890 18 27 36",
     email: "netacc@gmail.com",
   },
-  headline: "The creative process of<br/>crafting stand-out websites",
+  headline: "Borislav Radushev<br/>Business Analyst / PM",
   ingredients: ["Data Governance", "Information Security", "Process Automation", "AI"],
   chapters: [
     { index: "01", label: "01. dsk-bank", title: "Business Analyst, Data and Access Governance", period: "Sep 2025 - Present", active: true },
@@ -194,7 +194,7 @@ const cvPage = `<!DOCTYPE html>
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CVM - The Creative Website Manual</title>
+<title>Borislav Radushev | CV</title>
 <style>
   :root {
     --bg: #070707;
@@ -255,6 +255,18 @@ const cvPage = `<!DOCTYPE html>
   .api_method-post { background: var(--accent-2); color: #070707; }
   .api_endpoint-path { color: var(--text); }
   .api_endpoint-status { margin-left: auto; color: var(--muted); }
+  html { scroll-behavior: smooth; }
+  .info_stroke { text-decoration: none; color: var(--text); display: inline-block; }
+  .info_stroke:hover { border-color: var(--accent); }
+  .cv_ingredients { position: relative; z-index: 1; padding: 40px 0 110px; }
+  .cv_chapters { position: relative; z-index: 1; padding: 40px 0 110px; }
+  .chapter-list { display: flex; flex-direction: column; gap: 16px; }
+  .chapter { border: 1px solid var(--line); border-radius: 16px; padding: 28px; background: rgba(234, 234, 234, 0.03); }
+  .chapter-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+  .chapter_employer { font-size: 28px; margin: 0; }
+  .chapter_role { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0; }
+  .chapter_period { margin-left: auto; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--accent); }
+  .chapter-points { margin: 18px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.6; color: var(--muted); }
   @media (max-width: 700px) {
     .hero_topbar { padding: 20px 0; }
     .hero_main { padding: 40px 0; }
@@ -269,15 +281,15 @@ const cvPage = `<!DOCTYPE html>
 <section class="hero_wrap" id="home">
   <header class="hero_topbar">
     <div class="container hero_topbar-inner">
-      <p>©CVM — FW25</p>
+      <p>©Borislav Radushev — 2026</p>
       <p>prjct by Borislav Radushev</p>
       <p id="cv-topbar-right">Borislav Radushev — GET /cv — 200 OK</p>
     </div>
   </header>
   <main class="hero_main">
     <div class="container hero_copy">
-      <p class="hero_eyebrow">the creative process</p>
-      <h1 class="hero_headline" id="hero-headline">The creative process of crafting stand-out websites</h1>
+      <p class="hero_eyebrow">the cv</p>
+      <h1 class="hero_headline" id="hero-headline">Borislav Radushev<br/>Business Analyst / PM</h1>
       <div class="hero_rows">
         <div class="hero_row">
           <p class="hero_row-label">active ingredients</p>
@@ -293,7 +305,7 @@ const cvPage = `<!DOCTYPE html>
   <footer class="hero_bottom">
     <div class="container hero_bottom-inner">
       <p class="hero_coord"><span>[X]</span> <span>0</span>px</p>
-      <p class="hero_credits">project by <a href="https://bymonolog.com/" target="_blank">huy</a> + <a href="https://www.ivorjian.com/" target="_blank">ivor</a></p>
+      <p class="hero_credits">project by <a href="https://www.linkedin.com/in/ux531/" target="_blank">Borislav Radushev</a></p>
       <svg class="hero_barcode" width="140" height="44" viewBox="0 0 140 44" fill="none" aria-hidden="true">
         <rect x="0" y="6" width="2" height="32" fill="currentColor"></rect>
         <rect x="5" y="2" width="3" height="40" fill="currentColor"></rect>
@@ -322,6 +334,18 @@ const cvPage = `<!DOCTYPE html>
       </svg>
     </div>
   </footer>
+</section>
+<section class="cv_ingredients" id="ingredients">
+  <div class="container">
+    <p class="hero_row-label">focus areas</p>
+    <div class="hero_row-items" id="cv-ingredients-section"></div>
+  </div>
+</section>
+<section class="cv_chapters" id="chapters">
+  <div class="container">
+    <p class="hero_row-label">chapters</p>
+    <div class="chapter-list" id="chapter-list"></div>
+  </div>
 </section>
 <section class="api_section" id="api">
   <div class="container">
@@ -361,8 +385,9 @@ const cvPage = `<!DOCTYPE html>
     if (ing) {
       ing.innerHTML = "";
       (d.ingredients || []).forEach(function (item) {
-        var box = document.createElement("div");
+        var box = document.createElement("a");
         box.className = "info_stroke";
+        box.href = "#ingredients";
         box.textContent = item;
         ing.appendChild(box);
       });
@@ -371,12 +396,56 @@ const cvPage = `<!DOCTYPE html>
     if (ch) {
       ch.innerHTML = "";
       (d.chapters || []).forEach(function (c) {
-        var box = document.createElement("div");
+        var box = document.createElement("a");
         box.className = "info_stroke";
         if (c.active) { box.className = "info_stroke info_no_stroke"; }
+        box.href = "#chapter-" + c.index;
         box.textContent = c.label;
         ch.appendChild(box);
       });
+      var chapterList = document.getElementById("chapter-list");
+      if (chapterList) {
+        chapterList.innerHTML = "";
+        (d.experience || []).forEach(function (job, i) {
+          var sec = document.createElement("section");
+          sec.className = "chapter";
+          sec.id = "chapter-" + String(i + 1).padStart(2, "0");
+          var head = document.createElement("div");
+          head.className = "chapter-head";
+          var emp = document.createElement("h2");
+          emp.className = "chapter_employer";
+          emp.textContent = job.employer;
+          var role = document.createElement("p");
+          role.className = "chapter_role";
+          role.textContent = job.role;
+          var period = document.createElement("p");
+          period.className = "chapter_period";
+          period.textContent = job.period;
+          head.appendChild(emp);
+          head.appendChild(role);
+          head.appendChild(period);
+          sec.appendChild(head);
+          var points = document.createElement("div");
+          points.className = "chapter-points";
+          (job.points || []).forEach(function (pt) {
+            var p = document.createElement("p");
+            p.textContent = pt;
+            points.appendChild(p);
+          });
+          sec.appendChild(points);
+          chapterList.appendChild(sec);
+        });
+      }
+      var ingSection = document.getElementById("cv-ingredients-section");
+      if (ingSection) {
+        ingSection.innerHTML = "";
+        (d.ingredients || []).forEach(function (item) {
+          var box = document.createElement("div");
+          box.className = "info_stroke";
+          box.textContent = item;
+          ingSection.appendChild(box);
+        });
+      }
     }
     var right = document.getElementById("cv-topbar-right");
     if (right && d.identity) { right.textContent = d.identity.name + " - GET /cv - 200 OK"; }
