@@ -9,7 +9,86 @@ function jsonResponse(status, body) {
 }
 
 const books = [
-  { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald", released: 1925, price: 10, available: true },
+    {
+        "id": 1,
+        "title": "1984",
+        "author": "George Orwell",
+        "released": 1949,
+        "price": 9.99,
+        "available": true
+    },
+    {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "released": 1960,
+        "price": 12.99,
+        "available": true
+    },
+    {
+        "id": 3,
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "released": 1932,
+        "price": 8.99,
+        "available": true
+    },
+    {
+        "id": 4,
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "released": 1953,
+        "price": 10.99,
+        "available": true
+    },
+    {
+        "id": 5,
+        "title": "The Red Book",
+        "author": "Carl Jung",
+        "released": 2009,
+        "price": 29.99,
+        "available": true
+    },
+    {
+        "id": 7,
+        "title": "Man and His Symbols",
+        "author": "Carl Jung",
+        "released": 1964,
+        "price": 19.99,
+        "available": true
+    },
+    {
+        "id": 8,
+        "title": "Memories, Dreams, Reflections",
+        "author": "Carl Jung",
+        "released": 1961,
+        "price": 14.99,
+        "available": true
+    },
+    {
+        "id": 99,
+        "title": "Psychological Types",
+        "author": "Carl Jung",
+        "released": 1921,
+        "price": 24.99,
+        "available": true
+    },
+    {
+        "id": 6,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "released": 1925,
+        "price": 11.99,
+        "available": true
+    },
+    {
+        "title": "The Archaic Revival",
+        "author": "Terence McKenna",
+        "released": 2014,
+        "price": 9.99,
+        "id": 100,
+        "available": false
+    }
 ];
 
 function findBook(bookId) {
