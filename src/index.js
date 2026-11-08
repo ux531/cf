@@ -518,7 +518,7 @@ const cvPage = `<!DOCTYPE html>
 <main id="main">
   <section class="hero" id="home">
     <div class="container">
-      <p class="user_name u-mono" id="hero-kicker">BORISLAV RADUSHEV</p>
+      <p class="user_name u-mono">BORISLAV RADUSHEV</p>
       <p class="kicker u-mono" id="hero-kicker">CV · 2026.11 · Varna, BG · GET /api/cv 200 OK</p>
       <h1 id="hero-title">The work runs on the requirement.</h1>
       <p class="hero__lead" id="hero-lead">Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.</p>
@@ -709,6 +709,7 @@ const cvPage = `<!DOCTYPE html>
   /* ---------- rendering ---------- */
   function renderHero(d) {
     if (d.hero) {
+      setText("user_name", d.hero.user_name);
       setText("hero-kicker", d.hero.kicker);
       setText("hero-title", d.hero.title);
       setText("hero-lead", d.hero.lead);
