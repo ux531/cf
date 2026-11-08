@@ -128,7 +128,7 @@ const cvPage = `<!DOCTYPE html>
   .hero_headline { font-size: clamp(2.8rem, 8vw, 7.5rem); line-height: 0.98; letter-spacing: -0.04em; font-weight: 500; margin: 0 0 64px; text-wrap: balance; }
   .hero_rows { display: flex; flex-direction: column; gap: 40px; }
   .hero_row { display: flex; flex-direction: column; gap: 16px; }
-  .hero_row-label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0; }
+  .hero_row-label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
   .hero_row-items { display: flex; flex-wrap: wrap; gap: 12px; }
   .info_stroke { border: 1px solid var(--line); border-radius: 999px; padding: 10px 22px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 12px; display: inline-block; }
   .info_no_stroke { border-color: var(--accent); color: var(--accent); }
@@ -138,7 +138,7 @@ const cvPage = `<!DOCTYPE html>
   .hero_credits { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0; }
   .hero_credits a { color: var(--text); }
   .hero_barcode { opacity: 0.8; }
-  .api_section { position: relative; z-index: 1; padding: 40px 0 110px; }
+  // .api_section { position: relative; z-index: 1; padding: 20px 0 110px; }
   .api_console { display: flex; flex-direction: column; gap: 24px; border: 1px solid var(--line); border-radius: 16px; padding: 28px; background: rgba(234, 234, 234, 0.03); }
   .api_curl-label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0 0 12px; }
   .api_curl-cmd { font-family: var(--font-mono); font-size: 14px; color: var(--text); word-break: break-all; margin: 0; }
@@ -149,7 +149,7 @@ const cvPage = `<!DOCTYPE html>
   .api_response-head { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 12px; }
   .api_path { color: var(--accent); }
   .api_status { margin-left: auto; color: var(--muted); }
-  .api_json { margin: 0; padding: 20px; font-family: var(--font-mono); font-size: 12px; line-height: 1.6; overflow: auto; max-height: 480px; white-space: pre; color: var(--text); }
+  .api_json { margin: 0; padding: 20px; font-family: var(--font-mono); font-size: 12px; line-height: 1.6; overflow: auto; max-height: 280px; white-space: pre; color: var(--text); }
   .api_json .json-key { color: var(--accent); }
   .api_endpoints { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; }
   .api_endpoint { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; background: transparent; color: var(--text); font-family: var(--font-mono); font-size: 12px; text-align: left; }
@@ -164,8 +164,8 @@ const cvPage = `<!DOCTYPE html>
   .info_stroke { text-decoration: none; color: var(--text); display: inline-block; }
   .info_stroke:hover { border-color: var(--accent); }
   .cv_ingredients { position: relative; z-index: 1; padding: 40px 0 110px; }
-  .cv_chapters { position: relative; z-index: 1; padding: 40px 0 110px; }
-  .chapter-list { display: flex; flex-direction: column; gap: 16px; }
+  .cv_chapters { position: relative; z-index: 1; padding: 40px 0 40px; }
+  .chapter-list { display: flex; flex-direction: column; gap: 40px; }
   .chapter { border: 1px solid var(--line); border-radius: 16px; padding: 28px; background: rgba(234, 234, 234, 0.03); }
   .chapter-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
   .chapter_employer { font-size: 28px; margin: 0; }
