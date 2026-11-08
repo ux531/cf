@@ -15,14 +15,15 @@ const cv = {
     linkedin: "https://www.linkedin.com/in/ux531/",
   },
   hero: {
-    kicker: "CV · 2026.11 · Varna, BG · GET /api/cv 200 OK",
+    user_name: "BORISLAV RADUSHEV",    
+    kicker: "CV · Varna, BG · GET /api/cv 200 OK",
     title: "The work runs on the requirement.",
     lead: "Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.",
   },
   stats: [
     { label: "Now", value: "DSK Bank — Data & Access Governance" },
     { label: "Based", value: "Varna, Bulgaria" },
-    { label: "Record", value: "16 years · 5 roles" },
+    { label: "Record", value: "15+ years · 5 roles" },
     { label: "Frameworks", value: "BCBS 239 · GDPR · ISO 27001" },
   ],
   summary:
@@ -265,6 +266,7 @@ const cvPage = `<!DOCTYPE html>
     padding: 150px 0 0;
     border-bottom: 1px solid var(--line);
   }
+  .user_name { font-size: 3rem; color: var(--text); }  
   .kicker { margin: 0 0 28px; color: var(--accent); }
   .hero h1 {
     max-width: 15ch;
