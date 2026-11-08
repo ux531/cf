@@ -187,8 +187,7 @@ const cvPage = `<!DOCTYPE html>
   <header class="hero_topbar">
     <div class="container hero_topbar-inner">
       <p>©Borislav Radushev — 2026</p>
-      <p>prjct by Borislav Radushev</p>
-      <p id="cv-topbar-right">Borislav Radushev — GET /cv — 200 OK</p>
+      <p id="cv-topbar-right">GET /cv — 200 OK</p>
     </div>
   </header>
   <main class="hero_main">
