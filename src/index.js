@@ -486,13 +486,76 @@ const cvPage = `<!DOCTYPE html>
       --on-accent: #fff;
     }
     .hdr, .cta, .cur, #trail, #api, .skip { display: none !important; }
-    body { font-size: 11pt; }
+    body { font-size: 9.5pt; line-height: 1.42; }
     .container { width: 100%; }
-    .hero { min-height: auto; padding: 0 0 20px; }
-    .sec { padding: 22px 0; }
-    .log__row, .service, .rec-item, .contact__row { break-inside: avoid; }
-    a { text-decoration: none; }
+
+    /* compact masthead instead of a full-screen hero */
+    .hero { display: block; min-height: 0; padding: 0 0 9pt; }
+    .user_name { margin: 0; font-family: var(--mono); font-size: 20pt; line-height: 1.1; letter-spacing: 0.08em; }
+    .kicker { margin: 5pt 0 10pt; font-size: 7.5pt; }
+    .hero h1 { max-width: none; margin: 0 0 6pt; font-size: 23pt; line-height: 1.04; letter-spacing: -0.03em; }
+    .hero__lead { max-width: none; margin: 0 0 10pt; font-size: 9.5pt; }
+    .stats { margin: 0; }
+    .stats > div { padding: 5pt 8pt 5pt 0; }
+    .stats > div + div { padding-left: 8pt; }
+    .stats dt { margin: 0 0 2pt; font-size: 6.5pt; }
+    .stats dd { font-size: 8.5pt; }
+
+    /* sections: no page-sized padding */
+    .sec { padding: 10pt 0 0; border-bottom: 0; }
+    .cue { margin: 0 0 4pt; font-size: 7pt; }
+    .cue::before { width: 18pt; }
+    .sec h2 { max-width: none; margin: 0 0 2pt; font-size: 15.5pt; line-height: 1.06; }
+    .sec__sub { max-width: none; margin: 0 0 6pt; font-size: 8.5pt; }
+    .cue, .sec h2, .sec__sub { break-after: avoid; }
+
+    /* log: single column in print so entries can flow across pages */
+    .log__row { display: block; padding: 6pt 0; }
+    .log__meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8pt; margin-bottom: 4pt; }
+    .log__n { display: inline; margin: 0; font-size: 8pt; }
+    .log__date { display: inline; margin: 0; font-size: 7.5pt; }
+    .log__tags { display: inline-flex; gap: 3pt; }
+    .chip { padding: 1pt 4pt; font-size: 6pt; }
+    .log__body h3 { font-size: 12pt; }
+    .log__role { margin-bottom: 4pt; font-size: 7pt; }
+    .log__body ul { gap: 3pt; margin-bottom: 4pt; }
+    .log__body li { padding-left: 12pt; font-size: 9pt; line-height: 1.4; }
+    .proof { padding-top: 4pt; font-size: 8pt; line-height: 1.45; }
+    .proof b { font-size: 6.5pt; }
+
+    /* services */
+    .service { display: block; padding: 6pt 0; }
+    .service__n { display: block; margin-bottom: 2pt; font-size: 8pt; }
+    .service h3 { font-size: 11.5pt; }
+    .service__sub { margin-bottom: 3pt; font-size: 7pt; }
+    .service p { margin-bottom: 4pt; font-size: 9pt; }
+    .groups { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10pt; margin-top: 8pt; }
+    .group h3 { margin-bottom: 3pt; font-size: 6.5pt; }
+    .group li { padding: 1pt 3pt; font-size: 6pt; }
+
+    /* record */
+    .record { gap: 18pt; margin-top: 6pt; }
+    .record h3 { margin-bottom: 2pt; font-size: 7pt; }
+    .rec-item { grid-template-columns: 62pt minmax(0, 1fr); gap: 8pt; padding: 5pt 0; break-inside: avoid; }
+    .rec-item__when { font-size: 7pt; }
+    .rec-item h4 { font-size: 8.5pt; }
+    .rec-item p { font-size: 7.5pt; }
+
+    /* contact */
+    .contact__mail { margin-bottom: 6pt; padding-bottom: 3pt; font-size: 15pt; }
+    .contact__row { grid-template-columns: 88pt 1fr; gap: 10pt; padding: 4pt 0; break-inside: avoid; }
+    .contact__row dt { font-size: 7pt; }
+    .contact__row dd { font-size: 9pt; }
+    .ftr { padding: 8pt 0 0; font-size: 6.5pt; break-before: avoid; }
+
+    /* flow: let long entries continue, never strand a heading */
+    .log__row, .service { break-inside: auto; }
+    .log__meta, .log__body h3, .log__role, .service h3, .service__sub { break-after: avoid; }
+    p, li { orphans: 2; widows: 2; }
+    a { color: inherit; text-decoration: none; }
   }
+  @page { size: A4; margin: 11mm 12mm; }
+
 </style>
 </head>
 <body>
