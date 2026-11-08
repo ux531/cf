@@ -583,7 +583,7 @@ const cvPage = `<!DOCTYPE html>
     <div class="container">
       <p class="user_name u-sans">BORISLAV RADUSHEV</p>
       <p class="kicker u-mono" id="hero-kicker">CV · 2026.11 · Varna, BG · GET /api/cv 200 OK</p>
-      <h1 id="hero-title">The work runs on the requirement.</h1>
+      <h1 id="hero-title">The requirement runs on the work.</h1>
       <p class="hero__lead" id="hero-lead">Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.</p>
       <div class="cta">
         <a class="btn btn--fill" href="#log">The record</a>
