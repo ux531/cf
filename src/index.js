@@ -1,4 +1,5 @@
-const jsonHeaders = { "Content-Type": "application/json" }
+const jsonHeaders = { "Content-Type": "application/json" };
+
 function jsonResponse(status, body) {
   return new Response(JSON.stringify(body), { status, headers: jsonHeaders });
 }
@@ -9,88 +10,153 @@ const cv = {
     role: "Business Analyst / PM",
     location: "Varna, Bulgaria",
     phone: "0890 18 27 36",
+    phoneIntl: "+359890182736",
     email: "netacc@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ux531/",
   },
-  headline: "Borislav Radushev<br/>Business Analyst / PM",
-  ingredients: ["Data Governance", "Information Security", "Process Automation", "AI"],
-  chapters: [
-    { index: "01", label: "01. dsk-bank", title: "Business Analyst, Data and Access Governance", period: "Sep 2025 - Present", active: true },
-    { index: "02", label: "02. eon-group", title: "Business Analyst, E.ON Home Application", period: "Aug 2020 - Aug 2025", active: false },
-    { index: "03", label: "03. duke", title: "Business Analyst, Duke University", period: "Oct 2015 - May 2020", active: false },
-    { index: "04", label: "04. taxback", title: "Business Analyst, Tax Return & Refund", period: "2015", active: false },
-    { index: "05", label: "05. first-online", title: "Team Lead, First Online Solutions", period: "May 2010 - Dec 2014", active: false },
+  hero: {
+    kicker: "CV · 2026.11 · Varna, BG · GET /api/cv 200 OK",
+    title: "The work runs on the requirement.",
+    lead: "Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.",
+  },
+  stats: [
+    { label: "Now", value: "DSK Bank — Data & Access Governance" },
+    { label: "Based", value: "Varna, Bulgaria" },
+    { label: "Record", value: "16 years · 5 roles" },
+    { label: "Frameworks", value: "BCBS 239 · GDPR · ISO 27001" },
   ],
-  summary: "Business Analyst focusing on data governance and compliance processes in regulated and financial domains. Elicit requirements and map processes, write technical specifications and acceptance criteria for development, testing, and UAT. Work in Agile/Scrum environments using Jira and Confluence for scope, requirements, and UAT tracking. Interested in process automation, information security, data quality and lineage, and AI solutions.",
+  summary:
+    "Business Analyst focusing on data governance and compliance processes in regulated and financial domains. Elicit requirements and map processes, write technical specifications and acceptance criteria for development, testing, and UAT. Work in Agile/Scrum environments using Jira and Confluence for scope, requirements, and UAT tracking. Interested in process automation, information security, data quality and lineage, and AI solutions.",
   skills: {
     skills: ["Elicit Requirements", "User Stories", "Acceptance Criteria", "Process Mapping", "Stakeholder Management", "UAT"],
     tools: ["Jira", "Confluence", "SQL", "Miro"],
     domains: ["Data Governance", "Information Security", "BCBS 239/RDARR", "GDPR", "ISO 27001", "Banking Operations"],
     methodologies: ["Agile", "Scrum", "Kanban"],
   },
+  services: [
+    {
+      n: "01",
+      title: "Requirement elicitation",
+      sub: "Stories, criteria, process maps",
+      body: "I run the workshops, map the current process, and write specifications that development, testing and UAT can all work from without a second interpretation.",
+      seen: [
+        { label: "DSK Bank", job: "01" },
+        { label: "E.ON", job: "02" },
+        { label: "Taxback", job: "04" },
+      ],
+    },
+    {
+      n: "02",
+      title: "Data governance & lineage",
+      sub: "Catalog, ownership, BCBS 239",
+      body: "I define what data is, who owns it and where it flows. Business, technical and data ownership assigned, lineage documented, evidence ready for the regulator.",
+      seen: [{ label: "DSK Bank", job: "01" }],
+    },
+    {
+      n: "03",
+      title: "Compliance & access governance",
+      sub: "GDPR, ISO 27001, IAM, Entra ID",
+      body: "I turn regulation into access rules and configuration guides, working alongside security and risk so the controls survive audit and international teams.",
+      seen: [
+        { label: "E.ON", job: "02" },
+        { label: "DSK Bank", job: "01" },
+      ],
+    },
+    {
+      n: "04",
+      title: "Agile delivery & UAT",
+      sub: "Scrum, Kanban, Jira, Confluence",
+      body: "Scope, backlog and acceptance tracked in one place. I stay through testing until UAT signs off, not until the document is handed over.",
+      seen: [
+        { label: "E.ON", job: "02" },
+        { label: "DSK Bank", job: "01" },
+      ],
+    },
+    {
+      n: "05",
+      title: "Analysis tooling & automation",
+      sub: "SQL, Miro, data quality, AI",
+      body: "I query the source myself, prototype the flow in Miro, and look for the step that should be automated before it is documented again.",
+      seen: [
+        { label: "First Online", job: "05" },
+        { label: "Taxback", job: "04" },
+      ],
+    },
+  ],
   experience: [
     {
       employer: "DSK Bank",
       role: "Business Analyst, Data and Access Governance",
       location: "Varna, Bulgaria",
-      period: "Sep 2025 - Present",
+      period: "Sep 2025 — Present",
+      tags: ["dsk-bank", "data-governance", "current"],
       points: [
         "Worked on a centralized IAM solution to meet ECB regulations, with input from business, security and risk.",
         "Coordinated a data pipeline to securely pull data from multiple sources into a single information catalog.",
         "Documented the structure of the information catalog, assigning business, technical, and data ownership in line with BCBS 239.",
       ],
+      proof: "IAM scope covering ECB requirements; information catalog ownership mapped to BCBS 239.",
     },
     {
       employer: "E.ON Group",
       role: "Business Analyst, E.ON Home Application",
       location: "International",
-      period: "Aug 2020 - Aug 2025",
+      period: "Aug 2020 — Aug 2025",
+      tags: ["eon-group", "infosec"],
       points: [
-        "Worked on data classification policies, security standards and access rules for GDPR and ISO 27001 requirements, worked with compliance and development teams on data aggregation, security and retention.",
-        "Created access policies with information security for Entra ID (Azure AD) for international development teams to keep data secure while meeting EU regulation, documented asset inventories with business owners across countries and white label partners.",
-        "Supported compliance audit teams with necessary documentation and setup guides for security configuration.",
+        "Worked on data classification policies, security standards and access rules for GDPR and ISO 27001 requirements, with compliance and development teams on data aggregation, security and retention.",
+        "Created access policies with information security for Entra ID (Azure AD) for international development teams, and documented asset inventories with business owners across countries and white label partners.",
+        "Supported compliance audit teams with the documentation and setup guides for security configuration.",
       ],
+      proof: "Access policy for Entra ID across international teams; GDPR and ISO 27001 evidence packs for audit.",
     },
     {
       employer: "The Center for Advanced Hindsight",
       role: "Business Analyst",
-      location: "North Carolina, USA",
-      period: "Oct 2015 - May 2020",
+      location: "Duke University · North Carolina, USA",
+      period: "Oct 2015 — May 2020",
+      tags: ["duke", "research"],
       points: [
-        "Worked with research teams from Duke University on behavioral science proof-of-concept (PoC) programs funded by the U.S. Government.",
+        "Worked with research teams from Duke University on behavioral science proof-of-concept programs funded by the U.S. Government.",
         "Documented technical requirements with research teams to communicate with university approval bodies and coordinated development.",
       ],
+      proof: "Requirements for U.S.-government-funded behavioural science PoCs; approval bodies signed off, development coordinated.",
     },
     {
       employer: "Taxback International",
       role: "Business Analyst",
       location: "Varna, Bulgaria",
       period: "2015",
+      tags: ["taxback", "product"],
       points: [
-        "Worked with Taxback product owner and a delivery team (IT, design, development, and marketing) on redesigning and rebuilding Taxback core Tax Return and Refund service across all web and mobile platforms.",
-        "Was responsible for projects aligned with the new strategy and business objectives. We ensured data compliance with GDPR.",
+        "Worked with the product owner and a delivery team (IT, design, development and marketing) on redesigning and rebuilding the core Tax Return and Refund service across web and mobile.",
+        "Responsible for projects aligned with the new strategy and business objectives; data compliance with GDPR built into delivery.",
       ],
+      proof: "Core tax return and refund service rebuilt across web and mobile; GDPR built into the delivery.",
     },
     {
       employer: "First Online Solutions",
       role: "Team Lead",
       location: "Varna, Bulgaria",
-      period: "May 2010 - Dec 2014",
+      period: "May 2010 — Dec 2014",
+      tags: ["first-online", "team-lead"],
       points: [
-        "Led design and development teams to build additional services for Fantastic Services, including e-commerce solutions, SaaS applications, local search marketing platform.",
-        "We developed custom software solutions for the service industry including the CRM system, fleet management tools, and on-demand apps for iOS and Android. First Online Solutions was a top-5 UK service provider across multiple sectors.",
+        "Led design and development teams to build additional services for Fantastic Services, including e-commerce solutions, SaaS applications and a local search marketing platform.",
+        "Developed custom software for the service industry: CRM, fleet management tools, and on-demand apps for iOS and Android.",
       ],
+      proof: "CRM, fleet and on-demand apps shipped; top-5 UK service provider across multiple sectors.",
     },
   ],
   education: [
-    { school: "Technical University of Varna", degree: "Automation and Information Technology", period: "2000 - 2004" },
-    { school: "Vocational Technical High School", degree: "Technologist Programmer of Numerical Control Systems", period: "1996 - 2000" },
+    { school: "Technical University of Varna", degree: "Automation and Information Technology", period: "2000 — 2004" },
+    { school: "Vocational Technical High School", degree: "Technologist Programmer of Numerical Control Systems", period: "1996 — 2000" },
   ],
   certifications: [
     { name: "AWS Cloud", detail: "Architecture, compute, storage, networking, cost optimisation" },
     { name: "Microsoft Entra / Azure AD / Active Directory", detail: "Identity management, access governance" },
-    { name: "Apache Atlas", detail: "Metadata management, lineage, classification, and governance" },
+    { name: "Apache Atlas", detail: "Metadata management, lineage, classification and governance" },
     { name: "BCBS 239 / RDARR", detail: "Risk data aggregation and reporting" },
-    { name: "CompTIA A+, Network+, Security+", detail: "IT infrastructure, networking, and cybersecurity" },
+    { name: "CompTIA A+, Network+, Security+", detail: "IT infrastructure, networking and cybersecurity" },
   ],
 };
 
@@ -99,333 +165,865 @@ const cvPage = `<!DOCTYPE html>
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Borislav Radushev | CV</title>
+<title>Borislav Radushev — Business Analyst / PM</title>
+<meta name="description" content="CV of Borislav Radushev, business analyst for regulated data. Data governance, compliance, access governance and Agile delivery. Served as JSON from Cloudflare Workers."/>
+<script>try{var t=localStorage.getItem("br-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
+  /* ---------- theme tokens ---------- */
   :root {
-    --bg: #070707;
-    --text: #eaeaea;
-    --muted: #515151;
+    color-scheme: dark;
+    --bg: #080808;
+    --bg-2: #0e0e0e;
+    --text: #ececec;
+    --muted: #8a8a8a;
+    --line: rgba(236, 236, 236, 0.16);
     --accent: #c6fb50;
     --accent-2: #ffb700;
-    --line: rgba(234, 234, 234, 0.14);
-    --font-primary: "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --on-accent: #080808;
+    --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --pad: clamp(20px, 4vw, 56px);
   }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      color-scheme: light;
+      --bg: #f4f3ef;
+      --bg-2: #eae8e2;
+      --text: #121212;
+      --muted: #6f6f69;
+      --line: rgba(18, 18, 18, 0.16);
+      --accent: #3f5b00;
+      --accent-2: #945300;
+      --on-accent: #f4f3ef;
+    }
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f4f3ef;
+    --bg-2: #eae8e2;
+    --text: #121212;
+    --muted: #6f6f69;
+    --line: rgba(18, 18, 18, 0.16);
+    --accent: #3f5b00;
+    --accent-2: #945300;
+    --on-accent: #f4f3ef;
+  }
+
+  /* ---------- base ---------- */
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: var(--font-primary); -webkit-font-smoothing: antialiased; }
-  ::selection { background: var(--accent); color: #070707; }
-  .u-mono { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; }
-  .container { width: min(100% - 48px, 1440px); margin-inline: auto; }
-  .hero_wrap { min-height: 100vh; min-height: 100svh; background: var(--bg); color: var(--text); display: flex; flex-direction: column; position: relative; overflow: hidden; }
-  .hero_wrap::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(to right, var(--line) 1px, transparent 1px), linear-gradient(to bottom, var(--line) 1px, transparent 1px); background-size: 96px 96px; opacity: 0.5; pointer-events: none; }
-  .hero_topbar { position: relative; z-index: 2; padding: 28px 0; }
-  .hero_topbar-inner { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; gap: 16px; }
-  .hero_topbar p { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0; }
-  .hero_main { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; padding: 64px 0; }
-  .hero_copy { max-width: 980px; }
-  .hero_eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 12px; color: var(--accent); margin: 0 0 28px; }
-  .hero_headline { font-size: clamp(2.8rem, 8vw, 7.5rem); line-height: 0.98; letter-spacing: -0.04em; font-weight: 500; margin: 0 0 64px; text-wrap: balance; }
-  .hero_rows { display: flex; flex-direction: column; gap: 40px; }
-  .hero_row { display: flex; flex-direction: column; gap: 16px; }
-  .hero_row-label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
-  .hero_row-items { display: flex; flex-wrap: wrap; gap: 12px; }
-  .info_stroke { border: 1px solid var(--line); border-radius: 999px; padding: 10px 22px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 12px; display: inline-block; }
-  .info_no_stroke { border-color: var(--accent); color: var(--accent); }
-  .hero_bottom { position: relative; z-index: 2; padding: 32px 0; }
-  .hero_bottom-inner { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
-  .hero_coord { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0; }
-  .hero_credits { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0; }
-  .hero_credits a { color: var(--text); }
-  .hero_barcode { opacity: 0.8; }
-  // .api_section { position: relative; z-index: 1; padding: 20px 0 110px; }
-  .api_console { display: flex; flex-direction: column; gap: 24px; border: 1px solid var(--line); border-radius: 16px; padding: 28px; background: rgba(234, 234, 234, 0.03); }
-  .api_curl-label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0 0 12px; }
-  .api_curl-cmd { font-family: var(--font-mono); font-size: 14px; color: var(--text); word-break: break-all; margin: 0; }
-  .api_curl-bar { height: 4px; background: var(--line); border-radius: 4px; margin-top: 18px; overflow: hidden; }
-  .api_curl-bar-fill { height: 100%; width: 0; background: var(--accent); border-radius: 4px; animation: api-curl 1.6s ease forwards; }
-  @keyframes api-curl { to { width: 100%; } }
-  .api_response { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
-  .api_response-head { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 12px; }
-  .api_path { color: var(--accent); }
-  .api_status { margin-left: auto; color: var(--muted); }
-  .api_json { margin: 0; padding: 20px; font-family: var(--font-mono); font-size: 12px; line-height: 1.6; overflow: auto; max-height: 280px; white-space: pre; color: var(--text); }
-  .api_json .json-key { color: var(--accent); }
-  .api_endpoints { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; }
-  .api_endpoint { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; background: transparent; color: var(--text); font-family: var(--font-mono); font-size: 12px; text-align: left; }
-  .api_endpoint:hover { border-color: var(--accent); }
-  .api_endpoint_active { border-color: var(--accent); background: rgba(198, 251, 80, 0.06); }
-  .api_method { font-weight: 700; font-size: 11px; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.05em; }
-  .api_method-get { background: var(--accent); color: #070707; }
-  .api_method-post { background: var(--accent-2); color: #070707; }
-  .api_endpoint-path { color: var(--text); }
-  .api_endpoint-status { margin-left: auto; color: var(--muted); }
-  html { scroll-behavior: smooth; }
-  .info_stroke { text-decoration: none; color: var(--text); display: inline-block; }
-  .info_stroke:hover { border-color: var(--accent); }
-  .cv_ingredients { position: relative; z-index: 1; padding: 40px 0 110px; }
-  .cv_chapters { position: relative; z-index: 1; padding: 40px 0 40px; }
-  .chapter-list { display: flex; flex-direction: column; gap: 40px; }
-  .chapter { border: 1px solid var(--line); border-radius: 16px; padding: 28px; background: rgba(234, 234, 234, 0.03); }
-  .chapter-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
-  .chapter_employer { font-size: 28px; margin: 0; }
-  .chapter_role { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--muted); margin: 0; }
-  .chapter_period { margin-left: auto; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; font-size: 11px; color: var(--accent); }
-  .chapter-points { margin: 18px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.6; color: var(--muted); }
-  @media (max-width: 700px) {
-    .hero_topbar { padding: 20px 0; }
-    .hero_main { padding: 40px 0; }
-    .hero_bottom { padding: 24px 0; }
-    .hero_bottom-inner { flex-direction: column; align-items: flex-start; }
-    .api_section { padding: 24px 0 80px; }
-    .api_console { padding: 20px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  canvas { display: block; }
+  ::selection { background: var(--accent); color: var(--on-accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .u-mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .container { width: min(calc(100% - 2 * var(--pad)), 1320px); margin-inline: auto; }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 16px; top: 16px; z-index: 100; padding: 10px 14px; background: var(--bg); border: 1px solid var(--line); }
+
+  /* ---------- header ---------- */
+  .hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .hdr__in { display: flex; align-items: center; gap: 24px; padding-block: 14px; }
+  .hdr__brand { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+  .hdr__brand span { color: var(--accent); }
+  .hdr__tc { display: flex; align-items: center; gap: 10px; margin: 0; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .hdr__tc b { color: var(--text); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .nav { display: flex; align-items: center; gap: clamp(12px, 2vw, 28px); margin-left: auto; }
+  .nav a, .theme {
+    padding: 4px 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: none;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .nav a:hover, .nav a[aria-current="true"] { color: var(--text); border-bottom-color: var(--text); }
+  .theme { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); }
+  .theme:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100svh;
+    padding: 150px 0 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .kicker { margin: 0 0 28px; color: var(--accent); }
+  .hero h1 {
+    max-width: 15ch;
+    margin: 0 0 30px;
+    font-size: clamp(2.5rem, 7.6vw, 6.5rem);
+    font-weight: 500;
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+  .hero__lead { max-width: 60ch; margin: 0 0 36px; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.25rem); }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .btn:hover { color: var(--accent); border-color: var(--accent); }
+  .btn--fill { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .btn--fill:hover { background: var(--text); border-color: var(--text); color: var(--bg); }
+  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: clamp(48px, 7vw, 80px) 0 0; padding: 0; }
+  .stats > div { padding: 18px 20px 24px 0; border-top: 1px solid var(--line); }
+  .stats > div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+  .stats dt { margin: 0 0 8px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .stats dd { margin: 0; font-size: 14px; line-height: 1.4; }
+
+  /* ---------- sections ---------- */
+  .sec { padding: clamp(64px, 9vw, 120px) 0; border-bottom: 1px solid var(--line); }
+  .cue { display: flex; align-items: center; gap: 12px; margin: 0 0 18px; color: var(--muted); }
+  .cue::before { content: ""; flex: none; width: 32px; height: 1px; background: var(--accent); }
+  .sec h2 {
+    max-width: 22ch;
+    margin: 0 0 14px;
+    font-size: clamp(1.8rem, 4.4vw, 3.4rem);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  .sec__sub { max-width: 60ch; margin: 0 0 clamp(32px, 5vw, 56px); color: var(--muted); font-size: 15px; }
+
+  /* ---------- log ---------- */
+  .log { list-style: none; margin: 0; padding: 0; }
+  .log__row { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: clamp(16px, 3vw, 48px); padding: clamp(26px, 3.5vw, 40px) 0; border-top: 1px solid var(--line); }
+  .log__row:last-child { border-bottom: 1px solid var(--line); }
+  .log__meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .log__n { display: block; margin-bottom: 12px; font-size: 12px; color: var(--accent); }
+  .log__date { display: block; margin-bottom: 12px; color: var(--text); }
+  .log__tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip { display: inline-block; padding: 3px 7px; border: 1px solid var(--line); border-radius: 3px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .chip--on { border-color: var(--accent); color: var(--accent); }
+  .log__body h3 { margin: 0 0 6px; font-size: clamp(1.3rem, 2.2vw, 1.9rem); font-weight: 500; letter-spacing: -0.02em; }
+  .log__role { margin: 0 0 18px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .log__body ul { display: grid; gap: 10px; max-width: 74ch; margin: 0 0 18px; padding: 0; list-style: none; }
+  .log__body li { position: relative; padding-left: 20px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .log__body li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+  .proof { max-width: 82ch; margin: 0; padding-top: 14px; border-top: 1px dashed var(--line); font-family: var(--mono); font-size: 11px; line-height: 1.7; letter-spacing: 0.01em; color: var(--muted); }
+  .proof b { color: var(--accent); font-weight: 500; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .proof a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .proof a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- services ---------- */
+  .services { list-style: none; margin: 0; padding: 0; }
+  .service { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: clamp(16px, 3vw, 48px); padding: clamp(24px, 3vw, 36px) 0; border-top: 1px solid var(--line); }
+  .service:last-child { border-bottom: 1px solid var(--line); }
+  .service__n { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--accent); }
+  .service h3 { margin: 0 0 4px; font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 500; letter-spacing: -0.02em; }
+  .service__sub { margin: 0 0 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .service p { max-width: 74ch; margin: 0 0 16px; color: var(--muted); font-size: 15px; }
+
+  /* ---------- skill groups ---------- */
+  .groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); margin: clamp(36px, 5vw, 56px) 0 0; }
+  .group h3 { margin: 0 0 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .group ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .group li { padding: 4px 8px; border: 1px solid var(--line); border-radius: 3px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* ---------- api ---------- */
+  .explorer { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+  .curl { margin: 0 0 6px; font-family: var(--mono); font-size: 12px; color: var(--muted); word-break: break-all; }
+  .curl b { color: var(--text); font-weight: 400; }
+  .bar { height: 2px; margin: 0 0 28px; background: var(--line); overflow: hidden; }
+  .bar span { display: block; width: 0; height: 100%; background: var(--accent); animation: load 1.4s ease forwards; }
+  @keyframes load { to { width: 100%; } }
+  .endpoints { display: flex; flex-direction: column; }
+  .endpoint {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: baseline;
+    width: 100%;
+    padding: 13px 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    background: none;
+    color: inherit;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    cursor: pointer;
+  }
+  .endpoint:last-child { border-bottom: 1px solid var(--line); }
+  .endpoint:hover .endpoint__path, .endpoint[aria-pressed="true"] .endpoint__path { color: var(--accent); }
+  .endpoint__path { color: var(--text); overflow-wrap: anywhere; }
+  .endpoint__label { margin-left: 10px; color: var(--muted); font-size: 10px; }
+  .method { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .method--get { color: var(--accent); }
+  .method--post { color: var(--accent-2); }
+  .status { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .response { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--bg-2); }
+  .response__head { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .response__head .status { margin-left: auto; color: var(--accent); }
+  .json { max-height: 440px; margin: 0; padding: 16px; overflow: auto; font-family: var(--mono); font-size: 11px; line-height: 1.75; white-space: pre; tab-size: 2; }
+  .jk { color: var(--accent); }
+
+  /* ---------- record ---------- */
+  .record { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); margin-top: 32px; }
+  .record h3 { margin: 0 0 8px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .rec-item { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .rec-item:last-child { border-bottom: 1px solid var(--line); }
+  .rec-item__when { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; color: var(--muted); }
+  .rec-item h4 { margin: 0 0 3px; font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
+  .rec-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  /* ---------- contact ---------- */
+  .contact__h { max-width: 20ch; }
+  .contact__mail { display: inline-flex; align-items: center; gap: 14px; margin: 0 0 clamp(32px, 5vw, 56px); padding-bottom: 6px; border-bottom: 1px solid var(--line); font-size: clamp(1.4rem, 3.4vw, 2.6rem); letter-spacing: -0.03em; text-decoration: none; }
+  .contact__mail span { color: var(--accent); }
+  .contact__mail:hover { color: var(--accent); border-color: var(--accent); }
+  .contact__dl { max-width: 760px; margin: 0; }
+  .contact__row { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .contact__row:last-child { border-bottom: 1px solid var(--line); }
+  .contact__row dt { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .contact__row dd { margin: 0; font-size: 15px; }
+  .contact__row a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  .contact__row a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- footer ---------- */
+  .ftr { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding: 26px 0 34px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .ftr a { color: var(--text); text-decoration: none; }
+  .ftr a:hover { color: var(--accent); }
+
+  /* ---------- cursor + trail ---------- */
+  .cur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    mix-blend-mode: difference;
+    transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, opacity 0.2s ease;
+  }
+  .cur::before, .cur::after { content: ""; position: absolute; top: 50%; left: 50%; background: #fff; transform: translate(-50%, -50%); }
+  .cur::before { width: 1px; height: 7px; }
+  .cur::after { width: 7px; height: 1px; }
+  body.cursor-on .cur { opacity: 1; }
+  body.cursor-on, body.cursor-on a, body.cursor-on button { cursor: none; }
+  body.cursor-on .cur--hot { width: 56px; height: 56px; margin: -28px 0 0 -28px; }
+  #trail { position: fixed; inset: 0; z-index: 9998; width: 100%; height: 100%; pointer-events: none; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .explorer { grid-template-columns: 1fr; }
+    .groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hdr__tc { display: none; }
+  }
+  @media (max-width: 720px) {
+    html { scroll-padding-top: 104px; }
+    .hdr__in { flex-wrap: wrap; gap: 6px 16px; padding-block: 10px; }
+    .nav { width: 100%; margin-left: 0; gap: 18px; overflow-x: auto; padding-bottom: 2px; }
+    .nav::-webkit-scrollbar { display: none; }
+    .hero { padding-top: 130px; }
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stats > div { padding: 16px 16px 20px 0; }
+    .stats > div:nth-child(odd) { padding-left: 0; border-left: 0; }
+    .stats > div:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+    .log__row, .service { grid-template-columns: 1fr; gap: 14px; }
+    .log__meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+    .log__n, .log__date { display: inline-block; margin-bottom: 0; }
+    .log__tags { width: 100%; }
+    .record { grid-template-columns: 1fr; }
+    .rec-item { grid-template-columns: 1fr; gap: 4px; }
+    .contact__row { grid-template-columns: 1fr; gap: 4px; }
+    .endpoint__label { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .bar span { width: 100%; animation: none; }
+    .cur, #trail { display: none; }
+  }
+  @media print {
+    :root, :root[data-theme="light"] {
+      --bg: #fff;
+      --bg-2: #fff;
+      --text: #000;
+      --muted: #444;
+      --line: rgba(0, 0, 0, 0.25);
+      --accent: #000;
+      --accent-2: #000;
+      --on-accent: #fff;
+    }
+    .hdr, .cta, .cur, #trail, #api, .skip { display: none !important; }
+    body { font-size: 11pt; }
+    .container { width: 100%; }
+    .hero { min-height: auto; padding: 0 0 20px; }
+    .sec { padding: 22px 0; }
+    .log__row, .service, .rec-item, .contact__row { break-inside: avoid; }
+    a { text-decoration: none; }
   }
 </style>
 </head>
 <body>
-<section class="hero_wrap" id="home">
-  <header class="hero_topbar">
-    <div class="container hero_topbar-inner">
-      <p>©Borislav Radushev — 2026</p>
-      <p id="cv-topbar-right">GET /cv — 200 OK</p>
-    </div>
-  </header>
-  <main class="hero_main">
-    <div class="container hero_copy">
-      <p class="hero_eyebrow">the cv</p>
-      <h1 class="hero_headline" id="hero-headline">Borislav Radushev<br/>Business Analyst / PM</h1>
-      <div class="hero_rows">
-        <div class="hero_row">
-          <p class="hero_row-label">focus areas</p>
-          <div class="hero_row-items" id="cv-ingredients"></div>
-        </div>
-        <div class="hero_row">
-          <p class="hero_row-label">chapters</p>
-          <div class="hero_row-items" id="cv-chapters"></div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer class="hero_bottom">
-    <div class="container hero_bottom-inner">
-      <p class="hero_coord"><span>[X]</span> <span>0</span>px</p>
-      <p class="hero_credits">project by <a href="https://www.linkedin.com/in/ux531/" target="_blank">Borislav Radushev</a></p>
-      <svg class="hero_barcode" width="140" height="44" viewBox="0 0 140 44" fill="none" aria-hidden="true">
-        <rect x="0" y="6" width="2" height="32" fill="currentColor"></rect>
-        <rect x="5" y="2" width="3" height="40" fill="currentColor"></rect>
-        <rect x="10" y="8" width="2" height="28" fill="currentColor"></rect>
-        <rect x="14" y="0" width="4" height="44" fill="currentColor"></rect>
-        <rect x="21" y="5" width="2" height="34" fill="currentColor"></rect>
-        <rect x="25" y="1" width="3" height="42" fill="currentColor"></rect>
-        <rect x="30" y="7" width="2" height="30" fill="currentColor"></rect>
-        <rect x="34" y="3" width="5" height="38" fill="currentColor"></rect>
-        <rect x="40" y="9" width="2" height="26" fill="currentColor"></rect>
-        <rect x="44" y="0" width="3" height="44" fill="currentColor"></rect>
-        <rect x="48" y="6" width="2" height="32" fill="currentColor"></rect>
-        <rect x="53" y="2" width="4" height="40" fill="currentColor"></rect>
-        <rect x="58" y="8" width="2" height="28" fill="currentColor"></rect>
-        <rect x="62" y="4" width="3" height="36" fill="currentColor"></rect>
-        <rect x="67" y="0" width="2" height="44" fill="currentColor"></rect>
-        <rect x="71" y="5" width="4" height="34" fill="currentColor"></rect>
-        <rect x="77" y="1" width="2" height="42" fill="currentColor"></rect>
-        <rect x="81" y="7" width="3" height="30" fill="currentColor"></rect>
-        <rect x="86" y="3" width="2" height="38" fill="currentColor"></rect>
-        <rect x="90" y="0" width="4" height="44" fill="currentColor"></rect>
-        <rect x="96" y="6" width="2" height="32" fill="currentColor"></rect>
-        <rect x="100" y="2" width="3" height="40" fill="currentColor"></rect>
-        <rect x="105" y="8" width="2" height="28" fill="currentColor"></rect>
-        <rect x="109" y="4" width="4" height="36" fill="currentColor"></rect>
-      </svg>
-    </div>
-  </footer>
-</section>
-<section class="cv_chapters" id="chapters">
-  <div class="container">
-    <p class="hero_row-label">chapters</p>
-    <div class="chapter-list" id="chapter-list"></div>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div class="cur" id="cur" aria-hidden="true"></div>
+
+<header class="hdr">
+  <div class="container hdr__in">
+    <a class="hdr__brand" href="#home">BR<span>·</span>RADUSHEV</a>
+    <p class="hdr__tc"><b data-clock-tc>00:00:00:00</b><span>Sofia · EET</span></p>
+    <nav class="nav" aria-label="Sections">
+      <a href="#home">Index</a>
+      <a href="#log">Log</a>
+      <a href="#skills">Skills</a>
+      <a href="#api">API</a>
+      <a href="#contact">Contact</a>
+      <button class="theme" id="theme-toggle" type="button">Light</button>
+    </nav>
   </div>
-</section>
-<section class="api_section" id="api">
-  <div class="container">
-    <div class="api_console">
-      <div>
-        <p class="api_curl-label">curl</p>
-        <p class="api_curl-cmd">curl -H "Accept: application/json" https://cf.netacc.workers.dev/cv</p>
-        <div class="api_curl-bar"><div class="api_curl-bar-fill"></div></div>
+</header>
+
+<main id="main">
+  <section class="hero" id="home">
+    <div class="container">
+      <p class="kicker u-mono" id="hero-kicker">CV · 2026.11 · Varna, BG · GET /api/cv 200 OK</p>
+      <h1 id="hero-title">The work runs on the requirement.</h1>
+      <p class="hero__lead" id="hero-lead">Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.</p>
+      <div class="cta">
+        <a class="btn btn--fill" href="#log">The record</a>
+        <a class="btn" href="#api">Query the API</a>
       </div>
-      <div class="api_response">
-        <div class="api_response-head" id="api-response-head">
-          <span class="api_method api_method-get">GET</span>
-          <span class="api_path" id="api-response-path">/cv</span>
-          <span class="api_status">200 OK</span>
+      <dl class="stats" id="hero-stats"></dl>
+    </div>
+  </section>
+
+  <section class="sec" id="log">
+    <div class="container">
+      <p class="cue u-mono">CUE 01 · Experience · 5 entries</p>
+      <h2>What was scoped, what shipped, and what it proved.</h2>
+      <p class="sec__sub">Every role is a record: the brief, the work, and the outcome that backs it.</p>
+      <ol class="log" id="log-list"></ol>
+    </div>
+  </section>
+
+  <section class="sec" id="skills">
+    <div class="container">
+      <p class="cue u-mono">CUE 02 · Capabilities</p>
+      <h2>What I am hired for.</h2>
+      <p class="sec__sub">Five capabilities. Each one comes with an engagement behind it, because a method without a delivery is just a sentence.</p>
+      <ol class="services" id="services-list"></ol>
+      <div class="groups" id="skill-groups"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="api">
+    <div class="container">
+      <p class="cue u-mono">CUE 03 · API</p>
+      <h2>Every claim is an endpoint.</h2>
+      <p class="sec__sub">This CV is served as JSON by the Worker. Pick an endpoint and read the response — the same data that renders the page above.</p>
+      <div class="explorer">
+        <div>
+          <p class="curl"><b>curl</b> https://cf.netacc.workers.dev/api/cv</p>
+          <div class="bar"><span></span></div>
+          <div class="endpoints" id="api-endpoints"></div>
         </div>
-        <pre class="api_json" id="api-json"></pre>
+        <div class="response">
+          <div class="response__head" id="api-head">
+            <span class="method method--get">GET</span>
+            <span class="endpoint__path" id="api-path">/api/cv</span>
+            <span class="status">200 OK</span>
+          </div>
+          <pre class="json" id="api-json"></pre>
+        </div>
       </div>
     </div>
-    <div class="api_endpoints" id="api-endpoints"></div>
+  </section>
+
+  <section class="sec" id="record">
+    <div class="container">
+      <p class="cue u-mono">CUE 04 · Record</p>
+      <h2>Education and certification.</h2>
+      <div class="record">
+        <div>
+          <h3>Education</h3>
+          <div id="edu-list"></div>
+        </div>
+        <div>
+          <h3>Certification</h3>
+          <div id="cert-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="container">
+      <p class="cue u-mono">CUE 05 · Contact</p>
+      <h2 class="contact__h">Tell me the role, the team and the start date.</h2>
+      <p class="sec__sub">Based in Varna. Available for business analysis and product work in regulated environments. I reply within one working day.</p>
+      <a class="contact__mail" id="contact-mail" href="mailto:netacc@gmail.com">netacc@gmail.com <span>→</span></a>
+      <dl class="contact__dl" id="contact-rows"></dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container ftr">
+    <span id="ftr-name">© 2026 Borislav Radushev</span>
+    <span>Cloudflare Workers · <a href="/api/cv">GET /api/cv</a></span>
+    <a href="https://www.linkedin.com/in/ux531/" target="_blank" rel="noopener">LinkedIn ↗</a>
   </div>
-</section>
+</footer>
+
+<noscript><p class="container u-mono">This CV renders from /api/cv. Enable JavaScript to read the record.</p></noscript>
+
 <script>
   var data = null;
-
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ENDPOINTS = [
-    { method: "GET", path: "/cv", statusText: "200 OK", status: 200, label: "Get full CV" },
-    { method: "GET", path: "/cv/experience", statusText: "200 OK", status: 200, label: "Get professional experience" },
-    { method: "GET", path: "/cv/skills", statusText: "200 OK", status: 200, label: "Get competencies" },
-    { method: "GET", path: "/cv/education", statusText: "200 OK", status: 200, label: "Get education" },
-    { method: "POST", path: "/cv/consult", statusText: "201 Created", status: 201, label: "Submit consultation brief" },
+    { method: "GET", path: "/api/cv", statusText: "200 OK", label: "Full CV" },
+    { method: "GET", path: "/api/cv/experience", statusText: "200 OK", label: "Experience" },
+    { method: "GET", path: "/api/cv/skills", statusText: "200 OK", label: "Skills" },
+    { method: "GET", path: "/api/cv/education", statusText: "200 OK", label: "Education" },
+    { method: "POST", path: "/api/contact", statusText: "201 Created", label: "Submit a brief" }
   ];
 
-  function renderCv(d) {
-    var headline = document.getElementById("hero-headline");
-    if (headline && d.headline) { headline.innerHTML = d.headline; }
-    var ing = document.getElementById("cv-ingredients");
-    if (ing) {
-      ing.innerHTML = "";
-      (d.ingredients || []).forEach(function (item) {
-        var box = document.createElement("a");
-        box.className = "info_stroke";
-        box.href = "#ingredients";
-        box.textContent = item;
-        ing.appendChild(box);
-      });
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined && text !== null) n.textContent = text;
+    return n;
+  }
+  function setText(id, text) {
+    var n = document.getElementById(id);
+    if (n) n.textContent = text;
+  }
+  function pad2(n) { return n < 10 ? "0" + n : "" + n; }
+
+  /* ---------- theme ---------- */
+  var root = document.documentElement;
+  var THEME_KEY = "br-theme";
+  function themeName() {
+    return root.getAttribute("data-theme") ||
+      (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  }
+  function paintTheme() {
+    var b = document.getElementById("theme-toggle");
+    if (!b) return;
+    var next = themeName() === "dark" ? "light" : "dark";
+    b.textContent = next.charAt(0).toUpperCase() + next.slice(1);
+    b.setAttribute("aria-label", "Switch to " + next + " theme");
+  }
+  paintTheme();
+  var themeBtn = document.getElementById("theme-toggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = themeName() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+      paintTheme();
+    });
+  }
+  window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", paintTheme);
+
+  /* ---------- clock ---------- */
+  var clockFmt = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Sofia",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
+  var clockEl = document.querySelector("[data-clock-tc]");
+  var clockSecond = -1;
+  var clockTime = "00:00:00";
+  var clockFrame = -1;
+  function clockTick() {
+    var now = new Date();
+    var second = now.getSeconds();
+    if (second !== clockSecond) {
+      clockSecond = second;
+      clockTime = clockFmt.format(now);
     }
-    var ch = document.getElementById("cv-chapters");
-    if (ch) {
-      ch.innerHTML = "";
-      (d.chapters || []).forEach(function (c) {
-        var box = document.createElement("a");
-        box.className = "info_stroke";
-        if (c.active) { box.className = "info_stroke info_no_stroke"; }
-        box.href = "#chapter-" + c.index;
-        box.textContent = c.label;
-        ch.appendChild(box);
-      });
-      var chapterList = document.getElementById("chapter-list");
-      if (chapterList) {
-        chapterList.innerHTML = "";
-        (d.experience || []).forEach(function (job, i) {
-          var sec = document.createElement("section");
-          sec.className = "chapter";
-          sec.id = "chapter-" + String(i + 1).padStart(2, "0");
-          var head = document.createElement("div");
-          head.className = "chapter-head";
-          var emp = document.createElement("h2");
-          emp.className = "chapter_employer";
-          emp.textContent = job.employer;
-          var role = document.createElement("p");
-          role.className = "chapter_role";
-          role.textContent = job.role;
-          var period = document.createElement("p");
-          period.className = "chapter_period";
-          period.textContent = job.period;
-          head.appendChild(emp);
-          head.appendChild(role);
-          head.appendChild(period);
-          sec.appendChild(head);
-          var points = document.createElement("div");
-          points.className = "chapter-points";
-          (job.points || []).forEach(function (pt) {
-            var p = document.createElement("p");
-            p.textContent = pt;
-            points.appendChild(p);
-          });
-          sec.appendChild(points);
-          chapterList.appendChild(sec);
-        });
-      }
-      var ingSection = document.getElementById("cv-ingredients-section");
-      if (ingSection) {
-        ingSection.innerHTML = "";
-        (d.ingredients || []).forEach(function (item) {
-          var box = document.createElement("div");
-          box.className = "info_stroke";
-          box.textContent = item;
-          ingSection.appendChild(box);
-        });
-      }
+    var frame = Math.floor(now.getMilliseconds() / 1000 * 30);
+    if (frame !== clockFrame) {
+      clockFrame = frame;
+      if (clockEl) clockEl.textContent = clockTime + ":" + pad2(frame);
     }
-    var right = document.getElementById("cv-topbar-right");
-    if (right && d.identity) { right.textContent = d.identity.name + " - GET /cv - 200 OK"; }
+    if (!reduceMotion) window.requestAnimationFrame(clockTick);
+  }
+  clockTick();
+
+  /* ---------- nav active state ---------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var navSections = navLinks.map(function (a) {
+    return document.querySelector(a.getAttribute("href"));
+  }).filter(Boolean);
+  if ("IntersectionObserver" in window && navSections.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (a) { a.removeAttribute("aria-current"); });
+        var match = navLinks.filter(function (a) {
+          return a.getAttribute("href") === "#" + entry.target.id;
+        })[0];
+        if (match) match.setAttribute("aria-current", "true");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    navSections.forEach(function (s) { spy.observe(s); });
   }
 
+  /* ---------- rendering ---------- */
+  function renderHero(d) {
+    if (d.hero) {
+      setText("hero-kicker", d.hero.kicker);
+      setText("hero-title", d.hero.title);
+      setText("hero-lead", d.hero.lead);
+    }
+    var stats = document.getElementById("hero-stats");
+    if (stats) {
+      stats.textContent = "";
+      (d.stats || []).forEach(function (s) {
+        var box = el("div");
+        box.appendChild(el("dt", null, s.label));
+        box.appendChild(el("dd", null, s.value));
+        stats.appendChild(box);
+      });
+    }
+    setText("ftr-name", "© 2026 " + d.identity.name);
+  }
+
+  function renderLog(d) {
+    var list = document.getElementById("log-list");
+    if (!list) return;
+    list.textContent = "";
+    (d.experience || []).forEach(function (job, i) {
+      var row = el("li", "log__row");
+      row.id = "job-" + pad2(i + 1);
+
+      var meta = el("div", "log__meta");
+      meta.appendChild(el("span", "log__n", pad2(i + 1) + "."));
+      meta.appendChild(el("span", "log__date", job.period));
+      var tags = el("div", "log__tags");
+      (job.tags || []).forEach(function (tag, k) {
+        tags.appendChild(el("span", k === 0 && i === 0 ? "chip chip--on" : "chip", tag));
+      });
+      meta.appendChild(tags);
+      row.appendChild(meta);
+
+      var body = el("div", "log__body");
+      body.appendChild(el("h3", null, job.employer));
+      body.appendChild(el("p", "log__role", job.role + " · " + job.location));
+      var points = el("ul");
+      (job.points || []).forEach(function (point) {
+        points.appendChild(el("li", null, point));
+      });
+      body.appendChild(points);
+      if (job.proof) {
+        var proof = el("p", "proof");
+        proof.appendChild(el("b", null, "Proof — "));
+        proof.appendChild(document.createTextNode(job.proof));
+        body.appendChild(proof);
+      }
+      row.appendChild(body);
+      list.appendChild(row);
+    });
+  }
+
+  function renderServices(d) {
+    var list = document.getElementById("services-list");
+    if (!list) return;
+    list.textContent = "";
+    (d.services || []).forEach(function (s) {
+      var row = el("li", "service");
+      row.appendChild(el("span", "service__n", s.n));
+      var body = el("div");
+      body.appendChild(el("h3", null, s.title));
+      body.appendChild(el("p", "service__sub", s.sub));
+      body.appendChild(el("p", null, s.body));
+      var proof = el("p", "proof");
+      proof.appendChild(el("b", null, "Seen at — "));
+      (s.seen || []).forEach(function (ref, i) {
+        if (i) proof.appendChild(document.createTextNode(" · "));
+        var a = el("a", null, ref.label);
+        a.href = "#job-" + ref.job;
+        proof.appendChild(a);
+      });
+      body.appendChild(proof);
+      row.appendChild(body);
+      list.appendChild(row);
+    });
+  }
+
+  function renderGroups(d) {
+    var host = document.getElementById("skill-groups");
+    if (!host) return;
+    host.textContent = "";
+    var groups = [
+      ["Skills", (d.skills || {}).skills],
+      ["Tools", (d.skills || {}).tools],
+      ["Domains", (d.skills || {}).domains],
+      ["Methodologies", (d.skills || {}).methodologies]
+    ];
+    groups.forEach(function (pair) {
+      var box = el("div", "group");
+      box.appendChild(el("h3", null, pair[0]));
+      var ul = el("ul");
+      (pair[1] || []).forEach(function (item) { ul.appendChild(el("li", null, item)); });
+      box.appendChild(ul);
+      host.appendChild(box);
+    });
+  }
+
+  function renderRecord(d) {
+    var edu = document.getElementById("edu-list");
+    if (edu) {
+      edu.textContent = "";
+      (d.education || []).forEach(function (item) {
+        var row = el("div", "rec-item");
+        row.appendChild(el("span", "rec-item__when", item.period));
+        var box = el("div");
+        box.appendChild(el("h4", null, item.school));
+        box.appendChild(el("p", null, item.degree));
+        row.appendChild(box);
+        edu.appendChild(row);
+      });
+    }
+    var certs = document.getElementById("cert-list");
+    if (certs) {
+      certs.textContent = "";
+      (d.certifications || []).forEach(function (item) {
+        var row = el("div", "rec-item");
+        row.appendChild(el("span", "rec-item__when", "—"));
+        var box = el("div");
+        box.appendChild(el("h4", null, item.name));
+        box.appendChild(el("p", null, item.detail));
+        row.appendChild(box);
+        certs.appendChild(row);
+      });
+    }
+  }
+
+  function renderContact(d) {
+    var c = d.identity || {};
+    setText("contact-mail", c.email);
+    var mail = document.getElementById("contact-mail");
+    if (mail) mail.href = "mailto:" + c.email;
+    var rows = document.getElementById("contact-rows");
+    if (!rows) return;
+    rows.textContent = "";
+    var entries = [
+      ["Email", c.email, "mailto:" + c.email],
+      ["Phone", c.phone, "tel:" + c.phoneIntl],
+      ["LinkedIn", "/in/ux531", c.linkedin],
+      ["Location", c.location, null]
+    ];
+    entries.forEach(function (entry) {
+      var row = el("div", "contact__row");
+      row.appendChild(el("dt", null, entry[0]));
+      var dd = el("dd");
+      if (entry[2]) {
+        var a = el("a", null, entry[1]);
+        a.href = entry[2];
+        if (entry[2].indexOf("http") === 0) {
+          a.target = "_blank";
+          a.rel = "noopener";
+        }
+        dd.appendChild(a);
+      } else {
+        dd.textContent = entry[1];
+      }
+      row.appendChild(dd);
+      rows.appendChild(row);
+    });
+  }
+
+  /* ---------- api explorer ---------- */
   function bodyFor(ep) {
-    if (ep.path === "/cv") { return data; }
-    if (ep.path === "/cv/experience") { return data.experience; }
-    if (ep.path === "/cv/skills") { return data.skills; }
-    if (ep.path === "/cv/education") { return data.education; }
-    return { status: "created", data: { name: data.identity.name, email: data.identity.email } };
+    if (ep.path === "/api/cv") return data;
+    if (ep.path === "/api/cv/experience") return data.experience;
+    if (ep.path === "/api/cv/skills") return data.skills;
+    if (ep.path === "/api/cv/education") return data.education;
+    return {
+      status: "created",
+      received: { name: "Borislav Radushev", email: "netacc@gmail.com" },
+      reply: "Within one working day."
+    };
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
   function renderJson(ep) {
     var pre = document.getElementById("api-json");
-    var pretty = JSON.stringify(bodyFor(ep), null, 2);
-    var lines = pretty.split(String.fromCharCode(10));
-    var html = "";
-    for (var i = 0; i < lines.length; i++) {
-      var line = lines[i];
-      var idx = line.indexOf(String.fromCharCode(34) + ":"); 
-      if (idx > -1) {
-        var key = line.slice(0, idx + 2);
-        var val = line.slice(idx + 2);
-        html = html + '<span class="json-key">' + key + '</span>' + val;
-      } else {
-        html = html + line;
-      }
-      if (i < lines.length - 1) { html = html + String.fromCharCode(10); }
+    if (!pre) return;
+    pre.innerHTML = esc(JSON.stringify(bodyFor(ep), null, 2)).replace(/"([^"]+)":/g, '<span class="jk">"$1":</span>');
+    var head = document.getElementById("api-head");
+    if (head) {
+      head.textContent = "";
+      head.appendChild(el("span", "method " + (ep.method === "GET" ? "method--get" : "method--post"), ep.method));
+      head.appendChild(el("span", "endpoint__path", ep.path));
+      head.appendChild(el("span", "status", ep.statusText));
     }
-    pre.innerHTML = html;
   }
 
   function renderEndpoints() {
     var host = document.getElementById("api-endpoints");
-    host.innerHTML = "";
+    if (!host) return;
+    host.textContent = "";
     ENDPOINTS.forEach(function (ep) {
-      var row = document.createElement("div");
-      row.className = "api_endpoint";
-      if (ep.active) { row.className = "api_endpoint api_endpoint_active"; }
-      var method = document.createElement("span");
-      method.className = "api_method";
-      if (ep.method === "GET") { method.className = "api_method api_method-get"; } else { method.className = "api_method api_method-post"; }
-      method.textContent = ep.method;
-      var path = document.createElement("span");
-      path.className = "api_endpoint-path";
-      path.textContent = ep.path;
-      var label = document.createElement("span");
-      label.className = "api_endpoint-label";
-      label.textContent = ep.label;
-      var status = document.createElement("span");
-      status.className = "api_endpoint-status";
-      status.textContent = ep.statusText;
-      row.appendChild(method);
-      row.appendChild(path);
-      row.appendChild(label);
-      row.appendChild(status);
+      var row = el("button", "endpoint");
+      row.type = "button";
+      row.setAttribute("aria-pressed", "false");
+      row.appendChild(el("span", "method " + (ep.method === "GET" ? "method--get" : "method--post"), ep.method));
+      var name = el("span");
+      name.appendChild(el("span", "endpoint__path", ep.path));
+      name.appendChild(el("span", "endpoint__label", ep.label));
+      row.appendChild(name);
+      row.appendChild(el("span", "status", ep.statusText));
       row.addEventListener("click", function () {
-        var rows = host.querySelectorAll(".api_endpoint");
-        for (var j = 0; j < rows.length; j++) { rows[j].classList.remove("api_endpoint_active"); }
-        row.classList.add("api_endpoint_active");
+        var all = host.querySelectorAll(".endpoint");
+        for (var i = 0; i < all.length; i++) all[i].setAttribute("aria-pressed", "false");
+        row.setAttribute("aria-pressed", "true");
         renderJson(ep);
-        var head = document.getElementById("api-response-head");
-        var badge = ep.method === "GET" ? "api_method api_method-get" : "api_method api_method-post";
-        if (head) {
-          head.innerHTML = '<span class="' + badge + '">' + ep.method + '</span><span class="api_path">' + ep.path + '</span><span class="api_status">' + ep.statusText + '</span>';
-        }
       });
       host.appendChild(row);
     });
-    if (ENDPOINTS.length > 0) {
-      var first = host.querySelector(".api_endpoint");
-      if (first) { first.classList.add("api_endpoint_active"); }
+    var first = host.querySelector(".endpoint");
+    if (first) {
+      first.setAttribute("aria-pressed", "true");
       renderJson(ENDPOINTS[0]);
-      var head = document.getElementById("api-response-head");
-      if (head) {
-        head.innerHTML = '<span class="api_method api_method-get">GET</span><span class="api_path">/cv</span><span class="api_status">200 OK</span>';
-      }
     }
   }
 
-  fetch("/api/cv").then(function (r) { return r.json(); }).then(function (d) { data = d; renderCv(d); renderEndpoints(); }).catch(function () { return null; });
+  /* ---------- cursor + trail ---------- */
+  function accentColor() {
+    return getComputedStyle(root).getPropertyValue("--accent").trim() || "#c6fb50";
+  }
+
+  function initCursor() {
+    var cur = document.getElementById("cur");
+    if (!cur) return;
+    document.body.classList.add("cursor-on");
+    var x = window.innerWidth / 2;
+    var y = window.innerHeight / 2;
+    var cx = x;
+    var cy = y;
+    window.addEventListener("mousemove", function (e) {
+      x = e.clientX;
+      y = e.clientY;
+    }, { passive: true });
+    document.addEventListener("mouseover", function (e) {
+      if (e.target.closest && e.target.closest("a, button, [role='button']")) cur.classList.add("cur--hot");
+    });
+    document.addEventListener("mouseout", function (e) {
+      if (e.target.closest && e.target.closest("a, button, [role='button']")) cur.classList.remove("cur--hot");
+    });
+    (function follow() {
+      cx += (x - cx) * 0.18;
+      cy += (y - cy) * 0.18;
+      cur.style.transform = "translate3d(" + cx + "px," + cy + "px,0)";
+      window.requestAnimationFrame(follow);
+    })();
+  }
+
+  function initTrail() {
+    var canvas = document.getElementById("trail");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    var points = [];
+    var color = accentColor();
+    var frame = 0;
+    function size() {
+      var ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = window.innerWidth * ratio;
+      canvas.height = window.innerHeight * ratio;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    }
+    size();
+    window.addEventListener("resize", size);
+    window.addEventListener("mousemove", function (e) {
+      points.push({ x: e.clientX, y: e.clientY, a: 0.55, r: 1 + Math.random() * 2 });
+      if (points.length > 60) points.shift();
+    }, { passive: true });
+    (function draw() {
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = "rgba(0,0,0,0.16)";
+      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+      ctx.globalCompositeOperation = "source-over";
+      frame++;
+      if (frame % 60 === 0) color = accentColor();
+      ctx.fillStyle = color;
+      for (var i = 0; i < points.length; i++) {
+        var p = points[i];
+        p.a *= 0.94;
+        p.r *= 0.98;
+        ctx.globalAlpha = Math.max(p.a, 0);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      for (var j = points.length - 1; j >= 0; j--) {
+        if (points[j].a < 0.01) points.splice(j, 1);
+      }
+      window.requestAnimationFrame(draw);
+    })();
+  }
+
+  if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    initCursor();
+    initTrail();
+  }
+
+  /* ---------- boot ---------- */
+  fetch("/api/cv")
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      data = d;
+      renderHero(d);
+      renderLog(d);
+      renderServices(d);
+      renderGroups(d);
+      renderRecord(d);
+      renderContact(d);
+      renderEndpoints();
+    })
+    .catch(function () {
+      setText("hero-lead", "The CV data did not load. Request /api/cv directly.");
+    });
 </script>
 </body>
 </html>
@@ -435,16 +1033,40 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
     const method = request.method;
+    const path = url.pathname;
 
-    if (url.pathname === "/") {
+    if (path === "/" || path === "/cv") {
       return new Response(cvPage, {
-        status: 200,
         headers: { "Content-Type": "text/html; charset=utf-8" },
       });
     }
 
-    if (url.pathname === "/api/cv" && method === "GET") {
+    if (path === "/api/cv" && method === "GET") {
       return Response.json(cv);
+    }
+
+    if (path === "/api/cv/experience" && method === "GET") {
+      return Response.json(cv.experience);
+    }
+
+    if (path === "/api/cv/skills" && method === "GET") {
+      return Response.json(cv.skills);
+    }
+
+    if (path === "/api/cv/education" && method === "GET") {
+      return Response.json(cv.education);
+    }
+
+    if (path === "/api/contact" && method === "POST") {
+      let body = {};
+      try {
+        body = await request.json();
+      } catch (e) {}
+      return jsonResponse(201, {
+        status: "created",
+        received: body,
+        reply: "Within one working day.",
+      });
     }
 
     return jsonResponse(404, { detail: "Not Found" });
