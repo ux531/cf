@@ -17,7 +17,7 @@ const cv = {
   hero: {
     user_name: "BORISLAV RADUSHEV",    
     kicker: "CV · Varna, BG · GET /api/cv 200 OK",
-    title: "The requirement runs on the work.",
+    title: "The requirement runs the work.",
     lead: "Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.",
   },
   stats: [
@@ -583,7 +583,7 @@ const cvPage = `<!DOCTYPE html>
     <div class="container">
       <p class="user_name u-sans">BORISLAV RADUSHEV</p>
       <p class="kicker u-mono" id="hero-kicker">CV · 2026.11 · Varna, BG · GET /api/cv 200 OK</p>
-      <h1 id="hero-title">The requirement runs on the work.</h1>
+      <h1 id="hero-title">The requirement runs the work.</h1>
       <p class="hero__lead" id="hero-lead">Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.</p>
       <div class="cta">
         <a class="btn btn--fill" href="#log">The record</a>
@@ -655,7 +655,7 @@ const cvPage = `<!DOCTYPE html>
   <section class="sec" id="contact">
     <div class="container">
       <p class="cue u-mono">CUE 05 · Contact</p>
-      <h2 class="contact__h">Tell me the role, the team and the start date.</h2>
+      <h2 class="contact__h">Role, project, the team and the start date.</h2>
       <p class="sec__sub">Based in Varna. Available for business analysis and product work in regulated environments. I reply within one working day.</p>
       <a class="contact__mail" id="contact-mail" href="mailto:netacc@gmail.com">netacc@gmail.com <span>→</span></a>
       <dl class="contact__dl" id="contact-rows"></dl>
