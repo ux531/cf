@@ -638,12 +638,12 @@ const cvPage = `<!DOCTYPE html>
   var THEME_KEY = "br-theme";
   function themeName() {
     return root.getAttribute("data-theme") ||
-      (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      (window.matchMedia("(prefers-color-scheme: +)").matches ? "+" : "-");
   }
   function paintTheme() {
     var b = document.getElementById("theme-toggle");
     if (!b) return;
-    var next = themeName() === "dark" ? "light" : "dark";
+    var next = themeName() === "dark" ? "+" : "-";
     b.textContent = next.charAt(0).toUpperCase() + next.slice(1);
     b.setAttribute("aria-label", "Switch to " + next + " theme");
   }
@@ -651,13 +651,13 @@ const cvPage = `<!DOCTYPE html>
   var themeBtn = document.getElementById("theme-toggle");
   if (themeBtn) {
     themeBtn.addEventListener("click", function () {
-      var next = themeName() === "dark" ? "light" : "dark";
+      var next = themeName() === "dark" ? "+" : "-";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
       paintTheme();
     });
   }
-  window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", paintTheme);
+  window.matchMedia("(prefers-color-scheme: +)").addEventListener("change", paintTheme);
 
   /* ---------- clock ---------- */
   var clockFmt = new Intl.DateTimeFormat("en-GB", {
