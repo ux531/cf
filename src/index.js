@@ -643,7 +643,7 @@ const cvPage = `<!DOCTYPE html>
   function paintTheme() {
     var b = document.getElementById("theme-toggle");
     if (!b) return;
-    var next = themeName() === "dark" ? "+" : "-";
+    var next = themeName() === "-" ? "+" : "-";
     b.textContent = next.charAt(0).toUpperCase() + next.slice(1);
     b.setAttribute("aria-label", "Switch to " + next + " theme");
   }
@@ -651,7 +651,7 @@ const cvPage = `<!DOCTYPE html>
   var themeBtn = document.getElementById("theme-toggle");
   if (themeBtn) {
     themeBtn.addEventListener("click", function () {
-      var next = themeName() === "dark" ? "+" : "-";
+      var next = themeName() === "-" ? "+" : "-";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
       paintTheme();
