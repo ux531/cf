@@ -17,7 +17,7 @@ const cv = {
   hero: {
     user_name: "BORISLAV RADUSHEV",    
     kicker: "CV · Varna, BG · GET /api/cv 200 OK",
-    title: "The work runs on the requirement.",
+    title: "The requirement runs on the work.",
     lead: "Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.",
   },
   stats: [
