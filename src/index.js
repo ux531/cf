@@ -330,8 +330,8 @@ const cvPage = `<!DOCTYPE html>
   .chip--on { border-color: var(--accent); color: var(--accent); }
   .log__body h3 { margin: 0 0 6px; font-size: clamp(1.3rem, 2.2vw, 1.9rem); font-weight: 500; letter-spacing: -0.02em; }
   .log__role { margin: 0 0 18px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-  .log__body ul { display: grid; gap: 10px; max-width: 74ch; margin: 0 0 18px; padding: 0; list-style: none; }
-  .log__body li { position: relative; padding-left: 20px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .log__body ul { display: grid; gap: 10px; max-width: 72ch; margin: 0 0 18px; padding: 0; list-style: none; }
+  .log__body li { position: relative; padding-left: 20px; color: var(--muted); font-size: 18px; line-height: 1.55; }
   .log__body li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
   .proof { max-width: 82ch; margin: 0; padding-top: 14px; border-top: 1px dashed var(--line); font-family: var(--mono); font-size: 11px; line-height: 1.7; letter-spacing: 0.01em; color: var(--muted); }
   .proof b { color: var(--accent); font-weight: 500; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -345,7 +345,7 @@ const cvPage = `<!DOCTYPE html>
   .service__n { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--accent); }
   .service h3 { margin: 0 0 4px; font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 500; letter-spacing: -0.02em; }
   .service__sub { margin: 0 0 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-  .service p { max-width: 74ch; margin: 0 0 16px; color: var(--muted); font-size: 15px; }
+  .service p { max-width: 72ch; margin: 0 0 16px; color: var(--muted); font-size: 15px; }
 
   /* ---------- skill groups ---------- */
   .groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); margin: clamp(36px, 5vw, 56px) 0 0; }

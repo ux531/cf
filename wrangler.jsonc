@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "shade-mini-api",
+  "name": "cf",
   "compatibility_date": "2026-11-07",
   "main": "src/index.js"
 }
