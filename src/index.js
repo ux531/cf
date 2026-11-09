@@ -180,6 +180,7 @@ const cvPage = `<!DOCTYPE html>
     --line: rgba(236, 236, 236, 0.16);
     --accent: #c6fb50;
     --accent-2: #ffb700;
+    --dust: #7A7B7A;
     --on-accent: #080808;
     --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
     --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
@@ -193,8 +194,8 @@ const cvPage = `<!DOCTYPE html>
       --text: #121212;
       --muted: #6f6f69;
       --line: rgba(18, 18, 18, 0.16);
-      --accent: #3f5b00;
-      --accent-2: #945300;
+      --accent: #fbf250;
+      --accent-2: #ffb700;
       --on-accent: #f4f3ef;
     }
   }
@@ -205,7 +206,7 @@ const cvPage = `<!DOCTYPE html>
     --text: #121212;
     --muted: #6f6f69;
     --line: rgba(18, 18, 18, 0.16);
-    --accent: #3f5b00;
+    --accent: #dcb837;
     --accent-2: #945300;
     --on-accent: #f4f3ef;
   }
@@ -266,7 +267,7 @@ const cvPage = `<!DOCTYPE html>
     padding: 150px 0 0;
     border-bottom: 1px solid var(--line);
   }
-  .user_name { font-size: 3rem; color: var(--text); }  
+  .user_name { font-size: 3rem; color: var(--text); font-weight: 300; }  
   .kicker { margin: 0 0 28px; color: var(--accent); }
   .hero h1 {
     max-width: 15ch;
@@ -402,7 +403,7 @@ const cvPage = `<!DOCTYPE html>
 
   /* ---------- contact ---------- */
   .contact__h { max-width: 20ch; }
-  .contact__mail { display: inline-flex; align-items: center; gap: 14px; margin: 0 0 clamp(32px, 5vw, 56px); padding-bottom: 6px; border-bottom: 1px solid var(--line); font-size: clamp(1.4rem, 3.4vw, 2.6rem); letter-spacing: -0.03em; text-decoration: none; }
+  .contact__mail { display: none; align-items: center; gap: 14px; margin: 0 0 clamp(32px, 5vw, 56px); padding-bottom: 6px; border-bottom: 1px solid var(--line); font-size: clamp(1.4rem, 3.4vw, 2.6rem); letter-spacing: -0.03em; text-decoration: none; }
   .contact__mail span { color: var(--accent); }
   .contact__mail:hover { color: var(--accent); border-color: var(--accent); }
   .contact__dl { max-width: 760px; margin: 0; }
@@ -426,22 +427,22 @@ const cvPage = `<!DOCTYPE html>
     z-index: 9999;
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
-    margin: -17px 0 0 -17px;
-    border: 1px solid #fff;
+    width: 27px;
+    height: 27px;
+    margin: -13.5px 0 0 -13.5px;
+    border: 1px solid var(--accent);
     border-radius: 50%;
     pointer-events: none;
     opacity: 0;
-    mix-blend-mode: difference;
+    mix-blend-mode: normal;
     transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, opacity 0.2s ease;
   }
-  .cur::before, .cur::after { content: ""; position: absolute; top: 50%; left: 50%; background: #fff; transform: translate(-50%, -50%); }
+  .cur::before, .cur::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--accent); transform: translate(-50%, -50%); }
   .cur::before { width: 1px; height: 7px; }
   .cur::after { width: 7px; height: 1px; }
   body.cursor-on .cur { opacity: 1; }
   body.cursor-on, body.cursor-on a, body.cursor-on button { cursor: none; }
-  body.cursor-on .cur--hot { width: 56px; height: 56px; margin: -28px 0 0 -28px; }
+  body.cursor-on .cur--hot { width: 45px; height: 45px; margin: -22.5px 0 0 -22.5px; }
   #trail { position: fixed; inset: 0; z-index: 9998; width: 100%; height: 100%; pointer-events: none; }
 
   /* ---------- responsive ---------- */
@@ -486,7 +487,7 @@ const cvPage = `<!DOCTYPE html>
       --on-accent: #fff;
     }
     .hdr, .cta, .cur, #trail, #api, .skip { display: none !important; }
-    body { font-size: 9.5pt; line-height: 1.42; }
+    body { font-size: 9.5pt; line-height: 2.7; }
     .container { width: 100%; }
 
     /* compact masthead instead of a full-screen hero */
@@ -1018,8 +1019,8 @@ const cvPage = `<!DOCTYPE html>
       if (e.target.closest && e.target.closest("a, button, [role='button']")) cur.classList.remove("cur--hot");
     });
     (function follow() {
-      cx += (x - cx) * 0.18;
-      cy += (y - cy) * 0.18;
+      cx += (x - cx) * 0.38;
+      cy += (y - cy) * 0.38;
       cur.style.transform = "translate3d(" + cx + "px," + cy + "px,0)";
       window.requestAnimationFrame(follow);
     })();
@@ -1042,7 +1043,7 @@ const cvPage = `<!DOCTYPE html>
     size();
     window.addEventListener("resize", size);
     window.addEventListener("mousemove", function (e) {
-      points.push({ x: e.clientX, y: e.clientY, a: 0.55, r: 1 + Math.random() * 2 });
+      points.push({ x: e.clientX, y: e.clientY, a: 0.55, r: 1 + Math.random() * 5 });
       if (points.length > 60) points.shift();
     }, { passive: true });
     (function draw() {
