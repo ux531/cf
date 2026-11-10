@@ -15,15 +15,15 @@ const cv = {
     linkedin: "https://www.linkedin.com/in/ux531/",
   },
   hero: {
-    user_name: "BORISLAV RADUSHEV",    
-    kicker: "CV · Varna, BG · GET /api/cv 200 OK",
+    user_name: "BORISLAV RADUSHEV",
+    kicker: "Varna, BG · GET /api/cv 200 OK",
     title: "The requirement runs the work.",
     lead: "Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.",
   },
   stats: [
     { label: "Now", value: "DSK Bank — Data & Access Governance" },
     { label: "Based", value: "Varna, Bulgaria" },
-    { label: "Record", value: "15+ years · 5 roles" },
+    { label: "Record", value: "15+ years" },
     { label: "Frameworks", value: "BCBS 239 · GDPR · ISO 27001" },
   ],
   summary:
@@ -161,7 +161,9 @@ const cv = {
   ],
 };
 
-const cvPage = `<!DOCTYPE html>
+
+const cvPage = `
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -213,7 +215,7 @@ const cvPage = `<!DOCTYPE html>
 
   /* ---------- base ---------- */
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 44px; }
   body {
     margin: 0;
     background: var(--bg);
@@ -263,11 +265,11 @@ const cvPage = `<!DOCTYPE html>
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 100svh;
-    padding: 150px 0 0;
+    min-height: 100vh;
+    padding: 100px 0 0;
     border-bottom: 1px solid var(--line);
   }
-  .user_name { font-size: 3rem; color: var(--text); font-weight: 300; }  
+  .user_name { font-size: 3rem; color: var(--text); font-weight: 200; }  
   .kicker { margin: 0 0 28px; color: var(--accent); }
   .hero h1 {
     max-width: 15ch;
@@ -452,7 +454,7 @@ const cvPage = `<!DOCTYPE html>
     .hdr__tc { display: none; }
   }
   @media (max-width: 720px) {
-    html { scroll-padding-top: 104px; }
+    html { scroll-padding-top: 54px; }
     .hdr__in { flex-wrap: wrap; gap: 6px 16px; padding-block: 10px; }
     .nav { width: 100%; margin-left: 0; gap: 18px; overflow-x: auto; padding-bottom: 2px; }
     .nav::-webkit-scrollbar { display: none; }
@@ -487,7 +489,7 @@ const cvPage = `<!DOCTYPE html>
       --on-accent: #fff;
     }
     .hdr, .cta, .cur, #trail, #api, .skip { display: none !important; }
-    body { font-size: 9.5pt; line-height: 2.7; }
+    body { font-size: 9.5pt; line-height: 2.6; }
     .container { width: 100%; }
 
     /* compact masthead instead of a full-screen hero */
@@ -566,8 +568,8 @@ const cvPage = `<!DOCTYPE html>
 
 <header class="hdr">
   <div class="container hdr__in">
-    <a class="hdr__brand" href="#home">BR<span>·</span>RADUSHEV</a>
-    <p class="hdr__tc"><b data-clock-tc>00:00:00:00</b><span>Sofia · EET</span></p>
+    <a class="hdr__brand" href="#home">BR<span>·</span></a>
+    <p class="hdr__tc"><b data-clock-tc>00:00:00:00</b><span>Varna · EET</span></p>
     <nav class="nav" aria-label="Sections">
       <a href="#home">Index</a>
       <a href="#log">Log</a>
@@ -583,7 +585,7 @@ const cvPage = `<!DOCTYPE html>
   <section class="hero" id="home">
     <div class="container">
       <p class="user_name u-sans">BORISLAV RADUSHEV</p>
-      <p class="kicker u-mono" id="hero-kicker">CV · 2026.11 · Varna, BG · GET /api/cv 200 OK</p>
+      <p class="kicker u-mono" id="hero-kicker">2026.11 · Varna, BG · GET /api/cv 200 OK</p>
       <h1 id="hero-title">The requirement runs the work.</h1>
       <p class="hero__lead" id="hero-lead">Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.</p>
       <div class="cta">
@@ -1129,7 +1131,7 @@ export default {
       let body = {};
       try {
         body = await request.json();
-      } catch (e) {}
+      } catch (e) { }
       return jsonResponse(201, {
         status: "created",
         received: body,

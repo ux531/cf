@@ -1,0 +1,156 @@
+export const cv = {
+  identity: {
+    name: "Borislav Radushev",
+    role: "Business Analyst / PM",
+    location: "Varna, Bulgaria",
+    phone: "0890 18 27 36",
+    phoneIntl: "+359890182736",
+    email: "netacc@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ux531/",
+  },
+  hero: {
+    user_name: "BORISLAV RADUSHEV",    
+    kicker: "CV · Varna, BG · GET /api/cv 200 OK",
+    title: "The requirement runs the work.",
+    lead: "Business analyst for regulated data. I map the process, write the specification, set the acceptance criteria, and stay until UAT signs off. Banks, energy, research, tax.",
+  },
+  stats: [
+    { label: "Now", value: "DSK Bank — Data & Access Governance" },
+    { label: "Based", value: "Varna, Bulgaria" },
+    { label: "Record", value: "15+ years · 5 roles" },
+    { label: "Frameworks", value: "BCBS 239 · GDPR · ISO 27001" },
+  ],
+  summary:
+    "Business Analyst focusing on data governance and compliance processes in regulated and financial domains. Elicit requirements and map processes, write technical specifications and acceptance criteria for development, testing, and UAT. Work in Agile/Scrum environments using Jira and Confluence for scope, requirements, and UAT tracking. Interested in process automation, information security, data quality and lineage, and AI solutions.",
+  skills: {
+    skills: ["Elicit Requirements", "User Stories", "Acceptance Criteria", "Process Mapping", "Stakeholder Management", "UAT"],
+    tools: ["Jira", "Confluence", "SQL", "Miro"],
+    domains: ["Data Governance", "Information Security", "BCBS 239/RDARR", "GDPR", "ISO 27001", "Banking Operations"],
+    methodologies: ["Agile", "Scrum", "Kanban"],
+  },
+  services: [
+    {
+      n: "01",
+      title: "Requirement elicitation",
+      sub: "Stories, criteria, process maps",
+      body: "I run the workshops, map the current process, and write specifications that development, testing and UAT can all work from without a second interpretation.",
+      seen: [
+        { label: "DSK Bank", job: "01" },
+        { label: "E.ON", job: "02" },
+        { label: "Taxback", job: "04" },
+      ],
+    },
+    {
+      n: "02",
+      title: "Data governance & lineage",
+      sub: "Catalog, ownership, BCBS 239",
+      body: "I define what data is, who owns it and where it flows. Business, technical and data ownership assigned, lineage documented, evidence ready for the regulator.",
+      seen: [{ label: "DSK Bank", job: "01" }],
+    },
+    {
+      n: "03",
+      title: "Compliance & access governance",
+      sub: "GDPR, ISO 27001, IAM, Entra ID",
+      body: "I turn regulation into access rules and configuration guides, working alongside security and risk so the controls survive audit and international teams.",
+      seen: [
+        { label: "E.ON", job: "02" },
+        { label: "DSK Bank", job: "01" },
+      ],
+    },
+    {
+      n: "04",
+      title: "Agile delivery & UAT",
+      sub: "Scrum, Kanban, Jira, Confluence",
+      body: "Scope, backlog and acceptance tracked in one place. I stay through testing until UAT signs off, not until the document is handed over.",
+      seen: [
+        { label: "E.ON", job: "02" },
+        { label: "DSK Bank", job: "01" },
+      ],
+    },
+    {
+      n: "05",
+      title: "Analysis tooling & automation",
+      sub: "SQL, Miro, data quality, AI",
+      body: "I query the source myself, prototype the flow in Miro, and look for the step that should be automated before it is documented again.",
+      seen: [
+        { label: "First Online", job: "05" },
+        { label: "Taxback", job: "04" },
+      ],
+    },
+  ],
+  experience: [
+    {
+      employer: "DSK Bank",
+      role: "Business Analyst, Data and Access Governance",
+      location: "Varna, Bulgaria",
+      period: "Sep 2025 — Present",
+      tags: ["dsk-bank", "data-governance", "current"],
+      points: [
+        "Worked on a centralized IAM solution to meet ECB regulations, with input from business, security and risk.",
+        "Coordinated a data pipeline to securely pull data from multiple sources into a single information catalog.",
+        "Documented the structure of the information catalog, assigning business, technical, and data ownership in line with BCBS 239.",
+      ],
+      proof: "IAM scope covering ECB requirements; information catalog ownership mapped to BCBS 239.",
+    },
+    {
+      employer: "E.ON Group",
+      role: "Business Analyst, E.ON Home Application",
+      location: "International",
+      period: "Aug 2020 — Aug 2025",
+      tags: ["eon-group", "infosec"],
+      points: [
+        "Worked on data classification policies, security standards and access rules for GDPR and ISO 27001 requirements, with compliance and development teams on data aggregation, security and retention.",
+        "Created access policies with information security for Entra ID (Azure AD) for international development teams, and documented asset inventories with business owners across countries and white label partners.",
+        "Supported compliance audit teams with the documentation and setup guides for security configuration.",
+      ],
+      proof: "Access policy for Entra ID across international teams; GDPR and ISO 27001 evidence packs for audit.",
+    },
+    {
+      employer: "The Center for Advanced Hindsight",
+      role: "Business Analyst",
+      location: "Duke University · North Carolina, USA",
+      period: "Oct 2015 — May 2020",
+      tags: ["duke", "research"],
+      points: [
+        "Worked with research teams from Duke University on behavioral science proof-of-concept programs funded by the U.S. Government.",
+        "Documented technical requirements with research teams to communicate with university approval bodies and coordinated development.",
+      ],
+      proof: "Requirements for U.S.-government-funded behavioural science PoCs; approval bodies signed off, development coordinated.",
+    },
+    {
+      employer: "Taxback International",
+      role: "Business Analyst",
+      location: "Varna, Bulgaria",
+      period: "2015",
+      tags: ["taxback", "product"],
+      points: [
+        "Worked with the product owner and a delivery team (IT, design, development and marketing) on redesigning and rebuilding the core Tax Return and Refund service across web and mobile.",
+        "Responsible for projects aligned with the new strategy and business objectives; data compliance with GDPR built into delivery.",
+      ],
+      proof: "Core tax return and refund service rebuilt across web and mobile; GDPR built into the delivery.",
+    },
+    {
+      employer: "First Online Solutions",
+      role: "Team Lead",
+      location: "Varna, Bulgaria",
+      period: "May 2010 — Dec 2014",
+      tags: ["first-online", "team-lead"],
+      points: [
+        "Led design and development teams to build additional services for Fantastic Services, including e-commerce solutions, SaaS applications and a local search marketing platform.",
+        "Developed custom software for the service industry: CRM, fleet management tools, and on-demand apps for iOS and Android.",
+      ],
+      proof: "CRM, fleet and on-demand apps shipped; top-5 UK service provider across multiple sectors.",
+    },
+  ],
+  education: [
+    { school: "Technical University of Varna", degree: "Automation and Information Technology", period: "2000 — 2004" },
+    { school: "Vocational Technical High School", degree: "Technologist Programmer of Numerical Control Systems", period: "1996 — 2000" },
+  ],
+  certifications: [
+    { name: "AWS Cloud", detail: "Architecture, compute, storage, networking, cost optimisation" },
+    { name: "Microsoft Entra / Azure AD / Active Directory", detail: "Identity management, access governance" },
+    { name: "Apache Atlas", detail: "Metadata management, lineage, classification and governance" },
+    { name: "BCBS 239 / RDARR", detail: "Risk data aggregation and reporting" },
+    { name: "CompTIA A+, Network+, Security+", detail: "IT infrastructure, networking and cybersecurity" },
+  ],
+};
