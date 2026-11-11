@@ -4,6 +4,7 @@ function jsonResponse(status, body) {
   return new Response(JSON.stringify(body), { status, headers: jsonHeaders });
 }
 
+
 const cv = {
   identity: {
     name: "Borislav Radushev",
