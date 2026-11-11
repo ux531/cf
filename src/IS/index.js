@@ -126,7 +126,7 @@ const cv = {
         "Collaborated with university research teams to translate complex behavioural concepts so the work could secure government programme approval.",
         "Managed stakeholder communication across academic and institutional domains.",
       ],
-      proof: "U.S.-government-funded behavioural science PoCs delivered; programme approvals secured; academic stakeholders coordinated.",
+      proof: "U.S-government-funded behavioural science PoCs delivered; programme approvals secured; academic stakeholders coordinated.",
     },
     {
       employer: "Taxback International",
